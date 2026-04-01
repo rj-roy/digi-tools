@@ -1,13 +1,13 @@
 import React from 'react';
 import { FaTrashAlt } from "react-icons/fa";
 
-const CartItems = ({ selectedProducts }) => {
+const CartItems = ({ selectedProducts, handleClickRemove }) => {
     return (
         <div>
             {
                 selectedProducts.map(product => {
                     return (
-                        <div className="space-y-3">
+                        <div key={product.id} className="space-y-3">
                             <div
                                 className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
                             >
@@ -20,7 +20,9 @@ const CartItems = ({ selectedProducts }) => {
                                         <p className="text-gray-500">$-{product.price}</p>
                                     </div>
                                 </div>
-                                <button className="text-pink-500 hover:text-pink-600 flex items-center gap-1">
+                                <button
+                                onClick={() => handleClickRemove(product.id)}
+                                className="text-pink-500 hover:text-pink-600 flex items-center gap-1">
                                     <FaTrashAlt size={14} />
                                     Remove
                                 </button>

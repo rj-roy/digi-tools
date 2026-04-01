@@ -6,7 +6,7 @@ const Hero = () => {
         <section className='grid min-h-screen mt-3 pb-20'>
             <div className='grid grid-cols-1 md:grid-cols-2 place-items-center px-4 space-y-4'>
                 <div className='space-y-6'>
-                    <h3>New: Ai-Powered tools Available</h3>
+                    <h3 className='bg-purple-200 max-w-90 text-center p-1 px-2 rounded-full text-purple-700'>New: Ai-Powered tools Available</h3>
                     <h1 className='text-5xl md:text-7xl font-bold'>Supercharge Your Workflow with Digi Tools</h1>
                     <p className='text-lg md:text-xl text-gray-500'>Access premium AI tools, design assets, templates, and productivity software—all in one place. Start creating faster today. Explore Products</p>
 

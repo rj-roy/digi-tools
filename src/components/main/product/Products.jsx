@@ -8,8 +8,15 @@ const Products = ({ productPromise }) => {
     const [selected, setSelected] = useState("available");
 
     const [selectedProducts, setSelectedProducts] = useState([]);
+
+    const handleClickRemove = (id) => {
+        setSelectedProducts(
+            selectedProducts.filter(item => item.id !== id)
+        );
+    };
+
     return (
-        <section id='products' className='space-y-5'>
+        <section id='products' className='space-y-5 mb-25'>
             <div className='space-y-4 grid place-items-center'>
                 <div className='space-y-2 text-center'>
                     <h1 className='text-5xl'>Premium Digital Tools</h1>
@@ -32,17 +39,20 @@ const Products = ({ productPromise }) => {
             {
                 selected === "available" ?
                     <div>
-                        <AvailableProducts 
-                        pro={product}
-                        selectedProducts={selectedProducts}
-                        setSelectedProducts={setSelectedProducts}
-                         />
+                        <AvailableProducts
+                            pro={product}
+                            selectedProducts={selectedProducts}
+                            setSelectedProducts={setSelectedProducts}
+                        />
                     </div> :
                     <div>
                         {
-                            selectedProducts.length == "0"?
-                            <EmptyCart/> :
-                            <Cart selectedProducts={selectedProducts} />
+                            selectedProducts.length == "0" ?
+                                <EmptyCart /> :
+                                <Cart 
+                                selectedProducts={selectedProducts}
+                                handleClickRemove={handleClickRemove}
+                                />
                         }
                     </div>
             }
