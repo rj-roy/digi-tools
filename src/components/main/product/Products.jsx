@@ -1,27 +1,51 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import AvailableProducts from './AvailableProducts';
+import Cart from '../cart/Cart';
+import EmptyCart from '../cart/EmptyCart';
 
 const Products = ({ productPromise }) => {
     const product = use(productPromise).products;
+    const [selected, setSelected] = useState("available");
+
+    const [selectedProducts, setSelectedProducts] = useState([]);
     return (
-        <section>
+        <section id='products' className='space-y-5'>
             <div className='space-y-4 grid place-items-center'>
                 <div className='space-y-2 text-center'>
                     <h1 className='text-5xl'>Premium Digital Tools</h1>
                     <p>Choose from our curated collection of premium digital products designed to boost your productivity and creativity.</p>
                 </div>
                 <div className='gap-3 flex'>
-                    <button className='text-xl md:text-xl bg-linear-to-b from-[#4f39f6] to-[#9514fa] rounded-full p-2 px-3 text-white'>
+                    <button
+                        onClick={() => setSelected("available")}
+                        className={`cursor-pointer text-xl md:text-xl ${selected === "available" ? "bg-purple-600" : "bg-white"} rounded-full p-2 px-3 ${selected === "available" ? "text-white" : "text-black"}`}>
                         Products
                     </button>
-                    <button className='text-xl md:text-xl bg-linear-to-b from-[#4f39f6] to-[#9514fa] rounded-full p-2 px-3 text-white'>
-                        Cart <span>(0)</span>
+                    <button
+                        onClick={() => setSelected("selected")}
+                        className={`cursor-pointer text-xl md:text-xl ${selected === "selected" ? "bg-purple-600" : "bg-white"} rounded-full p-2 px-3 ${selected === "selected" ? "text-white" : "text-black"}`}>
+                        Cart <span>({selectedProducts.length})</span>
                     </button>
                 </div>
             </div>
-            <div>
-                <AvailableProducts pro = {product}/>
-            </div>
+
+            {
+                selected === "available" ?
+                    <div>
+                        <AvailableProducts 
+                        pro={product}
+                        selectedProducts={selectedProducts}
+                        setSelectedProducts={setSelectedProducts}
+                         />
+                    </div> :
+                    <div>
+                        {
+                            selectedProducts.length == "0"?
+                            <EmptyCart/> :
+                            <Cart selectedProducts={selectedProducts} />
+                        }
+                    </div>
+            }
         </section>
     );
 };

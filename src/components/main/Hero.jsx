@@ -11,10 +11,12 @@ const Hero = () => {
                     <p className='text-lg md:text-xl text-gray-500'>Access premium AI tools, design assets, templates, and productivity software—all in one place. Start creating faster today. Explore Products</p>
 
                     <div className='flex gap-4'>
-                        <button className="text-xl md:text-xl bg-linear-to-b from-[#4f39f6] to-[#9514fa] rounded-full p-2 px-3 text-white">
-                            Explore Products
-                        </button>
-                        <button className="border border-[#4f39f6] flex items-center justify-center  p-2 px-3 rounded-full gap-2">
+                        <a href="#products">
+                            <button className="cursor-pointer text-xl md:text-xl bg-linear-to-b from-[#4f39f6] to-[#9514fa] rounded-full p-2 px-3 text-white">
+                                Explore Products
+                            </button>
+                        </a>
+                        <button className="cursor-pointer border border-[#4f39f6] flex items-center justify-center  p-2 px-3 rounded-full gap-2">
                             <FaPlay className='' />
                             <span className='text-xl md:text-xl bg-linear-to-b from-[#4f39f6] to-[#9514fa] bg-clip-text text-transparent'>
                                 Watch Demo
@@ -41,7 +43,7 @@ const Hero = () => {
                     <div className='w-full'>
                         <h2>4.9</h2>
                         <p className='text-xl font-light'>Rating</p>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </section>

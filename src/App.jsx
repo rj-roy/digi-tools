@@ -19,7 +19,7 @@ function App() {
         <Header></Header>
       </header>
 
-      <main className='w-full max-w-6xl mx-auto space-y-16'>
+      <main className='w-full max-w-6xl mx-auto space-y-5'>
         <Hero></Hero>
         <Suspense>
           <Products productPromise={productPromise}></Products>

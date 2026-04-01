@@ -53,9 +53,11 @@ const Header = () => {
             <div className="navbar-end gap-4">
                 <FaShoppingCart />
                 <a href="#">Login</a>
-                <button className="bg-linear-to-b from-[#4f39f6] to-[#9514fa] rounded-full p-2 px-3 font-bold text-white">
-                    Get Started
-                </button>
+                <a href="./Pricing">
+                    <button className="cursor-pointer bg-linear-to-b from-[#4f39f6] to-[#9514fa] rounded-full p-2 px-3 font-bold text-white">
+                        Get Started
+                    </button>
+                </a>
             </div>
         </div>
     );
