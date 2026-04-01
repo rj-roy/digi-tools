@@ -41,8 +41,8 @@ const Card = ({product, selectedProducts, setSelectedProducts}) => {
 
             <div>
                 <button
-                    onClick={handleBuyNow}
-                className="buy-now cursor-pointer bg-linear-to-r from-[#4f39f6] to-[#9514fa] rounded-full p-2 px-3 text-white w-full hover:from-purple-600 hover:to-purple-800 transition-colors duration-300">
+                    onClick={handleBuyNow}                    
+                className="buy-now btn cursor-pointer bg-linear-to-r from-[#4f39f6] to-[#9514fa] rounded-full p-2 px-3 text-white w-full hover:from-purple-600 hover:to-purple-800 transition-colors duration-300">
                     Buy Now
                 </button>
             </div>
