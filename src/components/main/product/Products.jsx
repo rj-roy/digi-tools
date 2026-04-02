@@ -3,11 +3,10 @@ import AvailableProducts from './AvailableProducts';
 import Cart from '../cart/Cart';
 import EmptyCart from '../cart/EmptyCart';
 
-const Products = ({ productPromise }) => {
+const Products = ({ productPromise, selectedProducts, setSelectedProducts }) => {
     const product = use(productPromise).products;
     const [selected, setSelected] = useState("available");
 
-    const [selectedProducts, setSelectedProducts] = useState([]);
 
     const handleClickRemove = (id) => {
         setSelectedProducts(
@@ -15,8 +14,12 @@ const Products = ({ productPromise }) => {
         );
     };
 
+    const handleClickRemoveAll = () =>{
+        setSelectedProducts([]);
+    }
+
     return (
-        <section id='products' className='space-y-5 mb-25'>
+        <section id='products' className='space-y-5 mb-25 max-w-6xl mx-auto'>
             <div className='space-y-4 grid place-items-center'>
                 <div className='space-y-2 text-center'>
                     <h1 className='text-5xl'>Premium Digital Tools</h1>
@@ -50,6 +53,7 @@ const Products = ({ productPromise }) => {
                             selectedProducts.length == "0" ?
                                 <EmptyCart /> :
                                 <Cart 
+                                handleClickRemoveAll={handleClickRemoveAll}
                                 selectedProducts={selectedProducts}
                                 handleClickRemove={handleClickRemove}
                                 />

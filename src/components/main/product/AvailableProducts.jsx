@@ -1,6 +1,3 @@
-import React from 'react';
-import { FaCheck } from 'react-icons/fa';
-import Cart from '../cart/Cart';
 import Card from '../../ui/Card';
 
 const AvailableProducts = ({ pro, selectedProducts, setSelectedProducts }) => {
@@ -9,11 +6,18 @@ const AvailableProducts = ({ pro, selectedProducts, setSelectedProducts }) => {
         <div className='grid space-y-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-4'>
             {
                 pro.map(product => {
-                    return(
-                        <Card  key={product.id}
-                        product={product}
-                        selectedProducts={selectedProducts}
-                        setSelectedProducts={setSelectedProducts}
+
+                    const handleBuyNow = () => {
+                        setSelectedProducts([...selectedProducts, product]);
+                    }
+                    const isProductAdded = selectedProducts.some(item => item.id === product.id);
+                    return (
+                        <Card key={product.id}
+                            isProductAdded={isProductAdded}
+                            handleBuyNow={handleBuyNow}
+                            product={product}
+                            selectedProducts={selectedProducts}
+                            setSelectedProducts={setSelectedProducts}
                         />
                     )
                 })

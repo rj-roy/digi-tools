@@ -3,7 +3,7 @@ import { FaTrashAlt } from "react-icons/fa";
 
 const CartItems = ({ selectedProducts, handleClickRemove }) => {
     return (
-        <div>
+        <div className='space-y-3'>
             {
                 selectedProducts.map(product => {
                     return (
@@ -21,6 +21,7 @@ const CartItems = ({ selectedProducts, handleClickRemove }) => {
                                     </div>
                                 </div>
                                 <button
+                                type="button"
                                 onClick={() => handleClickRemove(product.id)}
                                 className="text-pink-500 hover:text-pink-600 flex items-center gap-1">
                                     <FaTrashAlt size={14} />

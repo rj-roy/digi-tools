@@ -3,7 +3,7 @@ import { FaPlay } from 'react-icons/fa';
 
 const Hero = () => {
     return (
-        <section className='grid min-h-screen mt-3 pb-20'>
+        <section className='grid mt-3 pb-20 max-w-6xl mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-2 place-items-center px-4 space-y-4'>
                 <div className='space-y-6'>
                     <h3 className='bg-purple-200 max-w-90 text-center p-1 px-2 rounded-full text-purple-700'>New: Ai-Powered tools Available</h3>

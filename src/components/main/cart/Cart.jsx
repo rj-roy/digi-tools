@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import CartItems from "./CartItems";
 
-const Cart = ({ selectedProducts, handleClickRemove }) => {
+const Cart = ({ selectedProducts, handleClickRemove, handleClickRemoveAll }) => {
     const totalPrice = useMemo(() => {
         return selectedProducts.reduce((sum, p) => sum + Number(p.price), 0);
     }, [selectedProducts]);
@@ -23,7 +23,9 @@ const Cart = ({ selectedProducts, handleClickRemove }) => {
 
                 </div>
 
-                <button className="mt-6 w-full py-3 bg-linear-to-r from-purple-500 to-purple-700 text-white font-semibold rounded-lg hover:opacity-90 transition">
+                <button
+                    onClick={handleClickRemoveAll}
+                type="button" className="mt-6 w-full py-3 bg-linear-to-r from-purple-500 to-purple-700 text-white font-semibold rounded-lg hover:opacity-90 transition">
                     Proceed To Checkout
                 </button>
             </div>
