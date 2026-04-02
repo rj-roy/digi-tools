@@ -27,10 +27,10 @@ const Header = ({ selectedProducts }) => {
                         tabIndex={-1}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
                     >
-                        <li><a href="">Products</a></li>
+                        <li><a href="#products">Products</a></li>
                         <li><a href="">Features</a></li>
                         <li><a href="">Testimonials</a></li>
-                        <li><a href="">Pricing</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                         <li><a href="">Faq</a></li>
                     </ul>
                 </div>
@@ -42,21 +42,23 @@ const Header = ({ selectedProducts }) => {
 
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a href="">Products</a></li>
+                    <li><a href="#products">Products</a></li>
                     <li><a href="">Features</a></li>
                     <li><a href="">Testimonials</a></li>
-                    <li><a href="">Pricing</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="">Faq</a></li>
                 </ul>
             </div>
 
             <div className="navbar-end gap-4">
                 <div className='relative' >
-                    <FaShoppingCart size={30}/>
+                    <a href="#products">
+                        <FaShoppingCart size={30}/>
+                    </a>
                     <span className='absolute -top-2 -right-2 text-xs bg-red-600 text-white rounded-full w-5 h-5 grid place-items-center place-content-center'>{selectedProducts.length}</span>
                 </div>
                 <a href="#">Login</a>
-                <a href="./Pricing">
+                <a href="#pricing">
                     <button className="cursor-pointer bg-linear-to-b from-[#4f39f6] to-[#9514fa] rounded-full p-2 px-3 font-bold text-white">
                         Get Started
                     </button>

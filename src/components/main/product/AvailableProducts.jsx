@@ -1,6 +1,6 @@
 import Card from '../../ui/Card';
 
-const AvailableProducts = ({ pro, selectedProducts, setSelectedProducts }) => {
+const AvailableProducts = ({ pro, selectedProducts, setSelectedProducts, notify }) => {
 
     return (
         <div className='grid space-y-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-4'>
@@ -9,6 +9,7 @@ const AvailableProducts = ({ pro, selectedProducts, setSelectedProducts }) => {
 
                     const handleBuyNow = () => {
                         setSelectedProducts([...selectedProducts, product]);
+                        notify.add();
                     }
                     const isProductAdded = selectedProducts.some(item => item.id === product.id);
                     return (

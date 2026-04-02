@@ -1,16 +1,23 @@
-# React + Vite
+# 🍰 Digital Tools
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📄 Description
+Digital Tools is a modern, visually appealing dessert website focused on showcasing and selling delicious cheesecakes and baked items. The platform highlights different flavors, trending products, and special deals to attract customers and provide an engaging user experience.
 
-Currently, two official plugins are available:
+## ⚙️ Technologies Used
+- HTML5  
+- CSS3  
+- Tailwind CSS  
+- JavaScript (ES6)      
+- React.js (for component-based UI)  
+- Netlify (for deployment)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+### 1. 🍓 Product Showcase
+Displays a variety of cheesecake flavors like Strawberry, Chocolate, Butterscotch, Red Velvet, and Vanilla with attractive visuals.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. 🔥 Deals of the Day
+Highlights trending products with pricing and countdown timers to create urgency and improve user engagement.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 3. 🛒 Order & Call-to-Action Sections
+Includes “Order Now” and “Shop Now” buttons that guide users to purchase items easily and improve conversion flow.

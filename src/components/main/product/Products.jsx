@@ -3,7 +3,7 @@ import AvailableProducts from './AvailableProducts';
 import Cart from '../cart/Cart';
 import EmptyCart from '../cart/EmptyCart';
 
-const Products = ({ productPromise, selectedProducts, setSelectedProducts }) => {
+const Products = ({ productPromise, selectedProducts, setSelectedProducts, notify }) => {
     const product = use(productPromise).products;
     const [selected, setSelected] = useState("available");
 
@@ -12,10 +12,12 @@ const Products = ({ productPromise, selectedProducts, setSelectedProducts }) => 
         setSelectedProducts(
             selectedProducts.filter(item => item.id !== id)
         );
+        notify.remove();
     };
 
     const handleClickRemoveAll = () =>{
         setSelectedProducts([]);
+        notify.purchase();
     }
 
     return (
@@ -43,6 +45,7 @@ const Products = ({ productPromise, selectedProducts, setSelectedProducts }) => 
                 selected === "available" ?
                     <div>
                         <AvailableProducts
+                            notify={notify}
                             pro={product}
                             selectedProducts={selectedProducts}
                             setSelectedProducts={setSelectedProducts}
